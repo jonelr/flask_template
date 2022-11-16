@@ -1,9 +1,12 @@
+# myapp/__init__.py
+
 from flask import Flask
 
 from myapp.auth.routes import auth_bp
 from myapp.auth.extensions import bcrypt, login_manager
 from myapp.site.routes import site_bp
 from myapp.models import db, migrate
+from myapp.commands.extensions import user_bp
 
 
 def create_app():
@@ -13,6 +16,7 @@ def create_app():
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(site_bp)
+    app.register_blueprint(user_bp)
 
     bcrypt.init_app(app)
     login_manager.init_app(app)
