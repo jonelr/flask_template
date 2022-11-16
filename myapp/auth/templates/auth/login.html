@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+<form method="post">
+    {{ form.csrf_token }}
+
+    <table class="striped">
+        <tr>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>{{ form.email }}</td>
+        </tr>
+        <tr>
+            <th>Password</th>
+        <tr>
+            <td>{{ form.password }}</td>
+        </tr>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" class="btn">Login <i class="material-icons right">lock_open</i></button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

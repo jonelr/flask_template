@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/materialize.css') }}" type="text/css" rel="stylesheet"
+        media="screen,projection" />
+    <link href="{{ url_for('static',filename='css/style.css') }}" type="text/css" rel="stylesheet"
+        media="screen,projection" />
+</head>
+
+<body>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="{{ url_for('trades_bp.home') }}"
+                class="brand-logo">Black
+                Pearl</a>
+            <ul class="right hide-on-med-and-down">
+                {% if current_user.is_authenticated %}
+                <li>
+                    <a href="{{ url_for('auth_bp.logout') }}">Log out</a>
+                </li>
+                {% endif %}
+
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="{{ url_for('trades_bp.home') }}">Open Trades</a></li>
+                <li><a href="{{ url_for('book_bp.home') }}">Books</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br><br>
+            {% block banner %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            {% block body %}
+            {% endblock %}
+        </div>
+        <br><br>
+    </div>
+
+    <footer class="page-footer orange">
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{{ url_for('static', filename='js/materialize.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+
+</body>
+
+</html>
