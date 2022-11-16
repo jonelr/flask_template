@@ -1,8 +1,8 @@
 from flask import Flask
 
-from myapp.auth import auth_bp
+from myapp.auth.routes import auth_bp
 from myapp.auth.extensions import bcrypt, login_manager
-from myapp.site import site_bp
+from myapp.site.routes import site_bp
 from myapp.models import db, migrate
 
 
