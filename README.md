@@ -30,7 +30,15 @@ $ touch instance/config.py
 $ pipenv install
 
 # Create DB
+$ flask db migrate 
 $ flask db upgrade
+
+# Create first user
+$ flask user create joe@example.com
+>>> Adding new user...
+>>> Password: 
+>>> Date added: 2022-11-16 15:07:35.168473
+>>> joe@example.com created
 
 # Run Server (http://localhost:5000)
 flask run
