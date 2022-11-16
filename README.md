@@ -49,3 +49,11 @@ flask run
 * GET           /
 * GET,POST      /login
 * GET           /logout
+
+## Screenshots
+### Home Page
+![Home page](https://raw.githubusercontent.com/jonelr/flask_template/master/myapp/static/home.png)
+
+### Login Page
+![Home page](https://raw.githubusercontent.com/jonelr/flask_template/master/myapp/static/login.png)
+
