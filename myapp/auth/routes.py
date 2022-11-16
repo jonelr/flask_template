@@ -41,6 +41,6 @@ def login():
 
                 next = request.args.get('next')
 
-                return redirect(next or url_for('home'))
+                return redirect(next or url_for('site_bp.home'))
 
     return render_template('auth/login.html', form=form)
