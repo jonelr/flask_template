@@ -11,8 +11,8 @@ migrate = Migrate()
 class User(db.Model):
     __tablename__ = "users"
 
-    email = db.Column(db.String, primary_key=True)
-    password = db.Column(db.String, nullable=False)
+    email = db.Column(db.String(100), primary_key=True)
+    password = db.Column(db.String(100), nullable=False)
     authenticated = db.Column(db.Boolean, default=False)
     active = db.Column(db.Boolean, default=True)
     date_added = db.Column(db.DateTime, default=datetime.utcnow)
